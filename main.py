@@ -9,7 +9,7 @@ st.cache_data.clear()
 
 # ✅ データ読み込み関数
 def load_data():
-    file_path = "250629material_select_input_data.xlsx"
+    file_path = "data.xlsx"  # ✅ 正しいファイル名に修正
     df = pd.read_excel(file_path, sheet_name="material condition table", dtype=str)
     df = df.apply(pd.to_numeric, errors='ignore')  # 数値だけ変換、他は文字列のまま
     df["材料名"] = df["材料名"].str.upper()
